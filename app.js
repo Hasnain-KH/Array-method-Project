@@ -83,13 +83,15 @@ inStock.addEventListener("click", function () {
 })
 
 
+
 checkStock.addEventListener("click", function () {
-    alert("hei")
-
-})
-
-checkRating.addEventListener("click", function () {
-    alert("hei")
-
+    let checkinstock = products.every((itm) => {
+        return itm === true;
+    })
+    if (checkinstock === true) {
+        alert("Yes availible")
+    } else {
+        alert("Not Availible")
+    }
 })
 
