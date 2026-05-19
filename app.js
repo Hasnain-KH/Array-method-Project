@@ -18,7 +18,6 @@ showAll.addEventListener("click", function () {
     let a = products.map((product) => {
         return product;
     })
-    console.log(a);
 
     let parentdiv = document.createElement("div");
     parentdiv.classList.add("parentdiv");
@@ -50,7 +49,7 @@ showAll.addEventListener("click", function () {
 })
 
 inStock.addEventListener("click", function () {
-    
+
     let item = products.filter(item => {
         return item.inStock === true;
     })
@@ -82,3 +81,15 @@ inStock.addEventListener("click", function () {
         document.body.append(parentmydiv);
     })
 })
+
+
+checkStock.addEventListener("click", function () {
+    alert("hei")
+
+})
+
+checkRating.addEventListener("click", function () {
+    alert("hei")
+
+})
+
