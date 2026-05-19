@@ -12,6 +12,7 @@ let products = [
     { name: "table", price: 9000, inStock: false, rating: 4.7 },
 
 ];
+
 showAll.addEventListener("click", function () {
 
     let a = products.map((product) => {
@@ -49,8 +50,35 @@ showAll.addEventListener("click", function () {
 })
 
 inStock.addEventListener("click", function () {
+    
     let item = products.filter(item => {
         return item.inStock === true;
     })
-    console.log(item);
+
+
+    let parentmydiv = document.createElement("div");
+
+    item.forEach((itms) => {
+        let mydiv = document.createElement("div");
+        let h2 = document.createElement("h2");
+        let h3 = document.createElement("h3");
+        let h4 = document.createElement("h4");
+        let h5 = document.createElement("h5");
+
+        mydiv.append(h2);
+        mydiv.append(h3);
+        mydiv.append(h4);
+        mydiv.append(h5);
+
+        h2.innerText = `Name : ${itms.name}`
+        h3.innerText = `inStock : ${itms.inStock}`
+        h4.innerText = `price : ${itms.price}`
+        h5.innerText = `Rating : ${itms.rating}`
+
+
+        parentmydiv.classList.add("parentmydiv");
+        parentmydiv.append(mydiv)
+        mydiv.classList.add("mydiv");
+        document.body.append(parentmydiv);
+    })
 })
