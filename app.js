@@ -86,12 +86,22 @@ inStock.addEventListener("click", function () {
 
 checkStock.addEventListener("click", function () {
     let checkinstock = products.every((itm) => {
-        return itm === true;
+        return itm.inStock === true;
     })
     if (checkinstock === true) {
-        alert("Yes availible")
+        alert("✅ “All products are in stock”")
     } else {
-        alert("Not Availible")
+        alert("❌ “Some products are out of stock”")
     }
 })
 
+checkRating.addEventListener("click", function () {
+    let checkrat = products.some((rating) => {
+        return rating.rating < 3;
+    })
+    if (checkrat) {
+        alert("⚠️ “Some products have low ratings”")
+    } else {
+        alert("✅ “All products have good ratings”")
+    }
+})
